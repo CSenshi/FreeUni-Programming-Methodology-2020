@@ -1,4 +1,4 @@
-package s1;
+package s2;
 
 import stanford.karel.*;
 
