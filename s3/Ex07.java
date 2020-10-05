@@ -10,7 +10,7 @@ import stanford.karel.*;
  * ბრილიანტი დევს. ამასთან გაითვალისწინეთ, რომ სამყაროს ზომები თქვენთვის უცნობია და 
  * თქვენი პროგრამა უნდა მუშაობდეს ნებისმიერი ზომის სამყაროსათვის.
  */
-public class Ex7 extends SuperKarel {
+public class Ex07 extends SuperKarel {
 
 	@Override
 	public void run() {

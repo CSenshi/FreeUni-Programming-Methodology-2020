@@ -7,7 +7,7 @@ import stanford.karel.*;
  * 5x1 უჯრაზე დევს 10 ცალი ბრილიანტი,
  * კარელმა ათივე ბრილიანტი უნდა გადაიტანოს 6x1 უჯრაზე
  */
-public class Ex2 extends SuperKarel {
+public class Ex02 extends SuperKarel {
 
 	@Override
 	public void run() {

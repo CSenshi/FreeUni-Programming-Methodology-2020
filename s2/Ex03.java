@@ -8,7 +8,7 @@ import stanford.karel.*;
  * გაითვალისწინეთ, რომ სამყაროს ზომა არ იცით. 
  * თქვენი პროგრამა უნდა მუშაობდეს ნებისმიერი ზომის სამყაროსათვის.
  */
-public class Ex3 extends SuperKarel {
+public class Ex03 extends SuperKarel {
 
 	@Override
 	public void run() {

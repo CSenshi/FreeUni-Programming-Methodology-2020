@@ -10,7 +10,7 @@ import stanford.karel.*;
  * 
  * ჩათვალეთ, რომ კარელს ჩანთაში უსასრულო რაოდენობის ბრილიანტი აქვს.
  */
-public class Ex9 extends SuperKarel {
+public class Ex09 extends SuperKarel {
 
 	@Override
 	public void run() {

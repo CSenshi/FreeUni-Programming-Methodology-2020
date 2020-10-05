@@ -9,7 +9,7 @@ import stanford.karel.*;
  * 
  * ჩათვალეთ, რომ კარელს ჩანთაში უსასრულო რაოდენობის ბრილიანტი აქვს და ჩათვალეთ, რომ n>=m.
  */
-public class Ex8 extends SuperKarel {
+public class Ex08 extends SuperKarel {
 
 	@Override
 	public void run() {

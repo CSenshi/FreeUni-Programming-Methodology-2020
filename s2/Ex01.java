@@ -7,7 +7,7 @@ import stanford.karel.*;
  * 3x1 უჯრაზე დევს ბრილიანტი,
  * კარელმა ბრილიანტი უნდა გადაიტანოს 4x1 უჯრაზე და დაამთავროს მუშაობა.
  */
-public class Ex1 extends SuperKarel {
+public class Ex01 extends SuperKarel {
 
 	@Override
 	public void run() {

@@ -8,7 +8,7 @@ import stanford.karel.*;
  * 
  * ჩათვალეთ რომ საწყის სამყაროში ბრილიანტები არსად არ დევს.
  */
-public class Ex4 extends SuperKarel {
+public class Ex04 extends SuperKarel {
 
 	@Override
 	public void run() {

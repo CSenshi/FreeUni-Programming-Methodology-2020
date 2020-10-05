@@ -9,7 +9,7 @@ import stanford.karel.*;
  * ჩათვალეთ რომ საწყისი სამყარო ცარიელი არ არის 
  * და გარკვეულ(ჩვენთვის უცნობ) უჯრებში თითო(მხოლოდ ერთი) ბრილიანტი დევს.
  */
-public class Ex5 extends SuperKarel {
+public class Ex05 extends SuperKarel {
 
 	@Override
 	public void run() {
