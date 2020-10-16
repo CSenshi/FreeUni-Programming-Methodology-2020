@@ -4,7 +4,7 @@ import acm.graphics.GLine;
 import acm.program.GraphicsProgram;;
 
 /*
- * ხაზებით ბადის დახატვა 10x10 ზე
+ * ხაზებით ბადის დახატვა 10x10-ზე.
  */
 public class Ex21 extends GraphicsProgram {
 

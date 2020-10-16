@@ -7,12 +7,12 @@ import acm.graphics.GRect;
 import acm.program.GraphicsProgram;;
 
 /*
- * ჭადრაკის დაფის დახატვა 8x8 ზე
+ * ჭადრაკის დაფის დახატვა 8x8-ზე.
  */
 public class Ex22 extends GraphicsProgram {
 
 	private int N_ROW = 8;
-	private int N_COL = 8;
+	private int N_COL = 80;
 
 	@Override
 	public void run() {
@@ -28,9 +28,11 @@ public class Ex22 extends GraphicsProgram {
 		double height = getHeight();
 		double width = getWidth();
 
+		// evaluate both size according to height and width
 		double sizeAccordingToWidth = width / N_COL;
 		double sizeAccordingToHeight = height / N_ROW;
 
+		// return minimum
 		if (sizeAccordingToWidth > sizeAccordingToHeight) {
 			return sizeAccordingToHeight;
 		} else {
@@ -39,18 +41,18 @@ public class Ex22 extends GraphicsProgram {
 	}
 
 	/*
-	 * Draw whole checkerboard with N_ROW rows (default 8 rows)
+	 * Draw whole checkerboard with N_COL rows (default 8 rows)
 	 */
 	private void drawCheckerboard(double cellSize) {
 		for (int i = 0; i < N_COL; i++) {
-			drawCheckerboardRow(cellSize, i);
+			drawCheckerboardCol(cellSize, i);
 		}
 	}
 
 	/*
-	 * Draw one row of chekerboard with N_COL cells (default 8 cells)
+	 * Draw one column of chekerboard with N_ROW cells (default 8 cells)
 	 */
-	private void drawCheckerboardRow(double cellSize, int rowNum) {
+	private void drawCheckerboardCol(double cellSize, int rowNum) {
 		for (int i = 0; i < N_ROW; i++) {
 			drawCheckerboardCell(cellSize, rowNum, i);
 		}
@@ -59,6 +61,9 @@ public class Ex22 extends GraphicsProgram {
 	/*
 	 * Draw one cell of checkerboard on (rowNum, colNum) coordinates with size of
 	 * rectSize
+	 * 
+	 * Disclaimer: (rowNum, colNum) are coordinates on checkerboard. They should be
+	 * converted into pixels
 	 */
 	private void drawCheckerboardCell(double cellSize, int rowNum, int colNum) {
 		double x = cellSize * rowNum;

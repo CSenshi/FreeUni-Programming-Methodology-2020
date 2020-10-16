@@ -3,7 +3,7 @@ package s8;
 import acm.program.ConsoleProgram;
 
 /*
- * მომხმარებელს შეყავს მთელი რიცხვი n, პროგრამამ უნდა დაბეჭდოს 1 დან n მდე რიცხვების ჯამი
+ * მომხმარებელს შეყავს მთელი რიცხვი n, პროგრამამ უნდა დაბეჭდოს 1 დან n მდე რიცხვების ჯამი.
  */
 public class Ex23 extends ConsoleProgram {
 

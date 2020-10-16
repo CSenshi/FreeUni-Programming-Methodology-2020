@@ -3,7 +3,7 @@ package s8;
 import acm.program.ConsoleProgram;
 
 /*
- * კონსოლიდან წაიკითხეთ n, შემდეგ წაიკითხეთ n ცალი მთელი რიცხვი და დაბეჭდეთ ჯამი
+ * კონსოლიდან წაიკითხეთ n, შემდეგ წაიკითხეთ n ცალი მთელი რიცხვი და დაბეჭდეთ ჯამი.
  */
 public class Ex20 extends ConsoleProgram {
 
