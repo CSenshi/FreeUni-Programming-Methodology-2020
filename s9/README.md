@@ -17,6 +17,9 @@
     ამოხსნა: [Ex27.java](Ex27.java)
 
 
+<br>
 
-RandomRect. დახატეთ კვადრატი წერტილების და რანდომის გამოყენებით
+
+
+BONUS: RandomRect. დახატეთ კვადრატი წერტილების და რანდომის გამოყენებით
    ამოხსნა: [ExRandomRect.java](ExRandomRect.java)
