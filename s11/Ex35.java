@@ -25,13 +25,13 @@ public class Ex35 extends ConsoleProgram {
 		double avg = (double) total / MAX_COUNT;
 
 		// Print Result
-		println("Average coin flips to get tall is " + avg);
+		println("Average coin flips to get head is " + avg);
 	}
 
 	public int simulateCoinFlip(RandomGenerator rgen) {
 		// Assume that if
-		// flipCoin == false ---> coin flipped "HEAD"
-		// flipCoin == true ---> coin flipped "TALL"
+		// flipCoin == true ---> coin flipped "HEAD"
+		// flipCoin == false ---> coin flipped "TALL"
 
 		int counter = 1;
 		while (true) {
