@@ -28,8 +28,12 @@ public class Ex59 extends ConsoleProgram {
 
 	public void run() {
 		// Input
-		int[][] matrix = { { 0, 1, 1, 0, 0, 1, 0, 0 }, { 0, 1, 1, 1, 1, 1, 0, 0 }, { 0, 0, 1, 1, 1, 1, 0, 0 },
-				{ 0, 0, 1, 1, 1, 1, 0, 0 }, };
+		int[][] matrix = { 
+				{ 0, 1, 1, 0, 0, 1, 0, 0 },
+				{ 0, 1, 1, 1, 1, 1, 0, 0 },
+				{ 0, 0, 1, 1, 1, 1, 0, 0 },
+				{ 0, 0, 1, 1, 1, 1, 0, 0 },
+			};
 
 		// Evaluate
 		int result = getMaxSquare(matrix);
