@@ -28,12 +28,8 @@ public class Ex59 extends ConsoleProgram {
 
 	public void run() {
 		// Input
-		int[][] matrix = {
-				{ 0, 1, 1, 0, 0, 1, 0, 0 }, 
-				{ 0, 1, 1, 1, 1, 1, 0, 0 }, 
-				{ 0, 0, 1, 1, 1, 1, 0, 0 },
-				{ 0, 0, 1, 1, 1, 1, 0, 0 },
-		};
+		int[][] matrix = { { 0, 1, 1, 0, 0, 1, 0, 0 }, { 0, 1, 1, 1, 1, 1, 0, 0 }, { 0, 0, 1, 1, 1, 1, 0, 0 },
+				{ 0, 0, 1, 1, 1, 1, 0, 0 }, };
 
 		// Evaluate
 		int result = getMaxSquare(matrix);
@@ -42,40 +38,44 @@ public class Ex59 extends ConsoleProgram {
 		println(result);
 	}
 
-	// 1. Iterate over all (width, height) pairs
+	// 1. Iterate over all (x0, y0) coordinates representing the starting point of
+	// rectangle
 	private int getMaxSquare(int[][] matrix) {
 		int maxSquare = 0;
-		for (int width = 1; width <= matrix.length; width++) {
-			for (int height = 1; height <= matrix[0].length; height++) {
-				boolean isOnesRect = isCurSquare(width, height, matrix);
-				if (isOnesRect) {
-					int curArea = width * height;
-					maxSquare = Math.max(curArea, maxSquare);
-				}
+
+		// Select start point (x0, y0)
+		for (int x0 = 0; x0 < matrix.length; x0++) {
+			for (int y0 = 0; y0 < matrix[x0].length; y0++) {
+				// find max area of rectangles with starting point of (x0, y0)
+				int maxArea = maxSquareWithStartPoint(x0, y0, matrix);
+				maxSquare = Math.max(maxArea, maxSquare);
 			}
 		}
 		return maxSquare;
 	}
 
-	// 2. Iterate over all rectangle with size of (width, height) and check if one
-	// of them is rectangle with only ones
-	private boolean isCurSquare(int width, int height, int[][] matrix) {
-		for (int x = 0; x <= matrix.length - width; x++) {
-			for (int y = 0; y <= matrix[x].length - height; y++) {
-				boolean isRect = checkRect(x, y, width, height, matrix);
+	// 2. Iterate over all (x1, y1) coordinates representing the ending point of
+	// rectangle and return max Area of rectangle with
+	// starting point = (x0, y0) and ending point = (x1, y1)
+	private int maxSquareWithStartPoint(int x0, int y0, int[][] matrix) {
+		int maxArea = 0;
+		for (int x1 = 0; x1 < matrix.length; x1++) {
+			for (int y1 = 0; y1 < matrix[x1].length; y1++) {
+				boolean isRect = checkRect(x0, y0, x1, y1, matrix);
 				if (isRect) {
-					return true;
+					int area = (x1 - x0 + 1) * (y1 - y0 + 1);
+					maxArea = Math.max(maxArea, area);
 				}
 			}
 		}
-		return false;
+		return maxArea;
 	}
 
-	// 3. Check if rect with coordinates (x, y) with size of (width,height) is
-	// rectangle of 1s
-	private boolean checkRect(int x, int y, int width, int height, int[][] matrix) {
-		for (int i = x; i < x + width; i++) {
-			for (int j = y; j < y + height; j++) {
+	// 3. Check if rect with starting coordinates (x0, y0) and ending coordinates
+	// (x1, y1) is rectangle of 1s
+	private boolean checkRect(int x0, int y0, int x1, int y1, int[][] matrix) {
+		for (int i = x0; i <= x1; i++) {
+			for (int j = y0; j <= y1; j++) {
 				if (matrix[i][j] == 0) {
 					return false;
 				}
