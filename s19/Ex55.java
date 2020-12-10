@@ -15,10 +15,6 @@ import acm.program.ConsoleProgram;
  */
 public class Ex55 extends ConsoleProgram {
 
-	public void init() {
-		this.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 30));
-	}
-
 	public void run() {
 		// Input
 		int input[] = readInput();
