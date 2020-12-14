@@ -121,4 +121,72 @@ public class Friends {
 		// Return Result
 		return result;
 	}
+
+	/*
+	 * Ex65 - return person who with friends to most users (revert oh Ex63)
+	 */
+	public String findMostFriendedUser() {
+		// 1. Fill reverse map of friendsList
+		Map<String, Integer> counts = new HashMap<String, Integer>();
+		for (String key : this.friendsList.keySet()) {
+			List<String> currentFriends = this.friendsList.get(key);
+			for (String friendName : currentFriends) {
+				if (!counts.containsKey(friendName)) {
+					counts.put(friendName, 0);
+				}
+				counts.put(friendName, counts.get(friendName) + 1);
+			}
+		}
+
+		// 2. Iterate and find user
+		int maxCount = 0;
+		String user = null;
+		for (String key : counts.keySet()) {
+			int value = counts.get(key);
+			if (value > maxCount) {
+				maxCount = value;
+				user = key;
+			}
+		}
+
+		// 3. Return user
+		return user;
+	}
+
+	/*
+	 * Ex66 - print 2 persons without mutual friends
+	 */
+	public void printFriendsWithNoMutuals() {
+		for (String user1 : this.friendsList.keySet()) {
+			for (String user2 : this.friendsList.keySet()) {
+				// If user1 == user2 we should not evaluate mutual friends because they are the
+				// same user
+				if (user1 == user2) {
+					continue;
+				}
+
+				// Get both users' friends list
+				List<String> friends1 = this.friendsList.get(user1);
+				List<String> friends2 = this.friendsList.get(user2);
+
+				// Iterate one friends list and check occurances in another list
+				boolean haveMutualFriends = false;
+				for (String friend : friends1) {
+					if (friends2.contains(friend)) {
+						haveMutualFriends = true;
+						break;
+					}
+				}
+
+				// If these users dont have friends in common print them and return
+				if (!haveMutualFriends) {
+					this.program.println(user1 + " - " + user2);
+					return;
+				}
+			}
+		}
+
+		// At this point we didn't find such users so print out following message
+		this.program.println("There are no 2 users with no mutual friends");
+	}
 }
