@@ -57,7 +57,6 @@ public class Ex70 extends GraphicsProgram implements ComponentListener {
 	public void componentResized(ComponentEvent arg0) {
 		removeAll();
 		drawGrid();
-		println(arg0);
 	}
 
 	@Override
