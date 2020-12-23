@@ -1,15 +1,8 @@
 package s27;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.swing.JButton;
-import javax.swing.JTextField;
-
-import acm.graphics.GLabel;
 import acm.graphics.GLine;
 import acm.program.GraphicsProgram;
 
