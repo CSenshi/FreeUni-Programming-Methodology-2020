@@ -5,9 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import acm.graphics.GImage;
 import acm.graphics.GLabel;
-import acm.io.IODialog;
 import acm.program.GraphicsProgram;
 
 /**
