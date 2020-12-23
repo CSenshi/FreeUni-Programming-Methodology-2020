@@ -6,6 +6,8 @@ package samples;
  * smallest and largest values in a list of integers.
  */
 
+import java.awt.Font;
+
 import acm.program.*;
 
 public class ConsoleProgrammSample extends ConsoleProgram {
