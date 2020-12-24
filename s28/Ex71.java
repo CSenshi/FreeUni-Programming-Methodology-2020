@@ -1,10 +1,8 @@
 package s28;
 
-import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import acm.program.ConsoleProgram;
 
@@ -36,6 +34,7 @@ public class Ex71 extends ConsoleProgram {
 	@Override
 	public void run() {
 		School school = new OldSchool();
+//		School school = new ReworkedSchool();
 
 		// 1. Add Teachers
 		addTeachers(school);

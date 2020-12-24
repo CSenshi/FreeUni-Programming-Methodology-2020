@@ -97,10 +97,12 @@ public class OldSchool implements School {
 
 		// Get current teacher's subjects
 		Map<String, List<String>> subjects = data.get(teacher);
+
 		// Iterate over subjects
 		for (String subject : subjects.keySet()) {
 			// Get current subject's pupils
 			List<String> pupils = subjects.get(subject);
+
 			// Iterate over pupils
 			for (String pupil : pupils) {
 				// Duplication check in result list
