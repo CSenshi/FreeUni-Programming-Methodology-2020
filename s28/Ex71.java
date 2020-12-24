@@ -1,6 +1,10 @@
 package s28;
 
+import java.awt.Font;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import acm.program.ConsoleProgram;
 
@@ -9,10 +13,10 @@ public class Ex71 extends ConsoleProgram {
 	/*-
 	 * School:
 	 * -	Shota: 
-	 *			"Programming Methodology" - ["Luka", "Eka"],
-	 *			"Open Source System" - [],
+	 *			"Programming Methodology" - ["Luka", "Eka"]
+	 *			"Open Source System" - []
 	 *			"OOP" - ["Saba", "Ketevani"],
-	 *			"Programming Paradigms" - ["Saba", "Ketevani"],
+	 *			"Programming Paradigms" - ["Saba", "Ketevani"]
 	 * 			
 	 * -	Nika: 
 	 *			"Discrete Math" - ["Mariami"]
@@ -21,14 +25,17 @@ public class Ex71 extends ConsoleProgram {
 	 *		
 	 * -	Giorgi: 
 	 *		 	"OOP" - ["Saba", "Ketevani"],
-	 *			"Programming Paradigms" - ["Saba", "Ketevani"],
+	 *			"Programming Paradigms" - ["Saba", "Ketevani"]
 	 *			"Distributed Systems" - ["Saba", "Ketevani"]
-	 * 
+	 *
+	 *-		Irakli:
+	 *			"Programming Methodology" - ["Luka", "Eka"]
+	 *			"Discrete Math" - ["Mariami"]
 	 */
-	 
+
 	@Override
 	public void run() {
-		School school = new School();
+		School school = new OldSchool();
 
 		// 1. Add Teachers
 		addTeachers(school);
@@ -39,15 +46,18 @@ public class Ex71 extends ConsoleProgram {
 		// 3. Add Pupils
 		addPupils(school);
 
-		// 4 Get pupils iterator
+		// 4. Add More Teachers
+		addMoreTeachersAndSubjects(school);
+
+		// 5 Get pupils iterator
 		println("######### Get Pupils #########");
 		testGetPupils(school);
 
-		// 5. Get teachers iterator
+		// 6. Get teachers iterator
 		println("######### Get Teachers #########");
 		testGetTeachers(school);
 
-		// 6. Get teachers after removing Shota
+		// 7. Get teachers after removing Shota
 		println("######### Get Teachers After Removing Teacher #########");
 		testRemoveTeacher(school);
 	}
@@ -72,12 +82,13 @@ public class Ex71 extends ConsoleProgram {
 		school.addSubject("Giorgi", "OOP");
 		school.addSubject("Giorgi", "Programming Paradigms");
 		school.addSubject("Giorgi", "Distributed Systems");
-		// 2.4 Sandro (Unknown);
+		// Sandro (Unknown);
 		school.addSubject("Sandro", "Super Course");
 	}
 
 	private void addPupils(School school) {
 		// Saba
+		school.addPupil("Saba", "OOP");
 		school.addPupil("Saba", "OOP");
 		school.addPupil("Saba", "Programming Paradigms");
 		school.addPupil("Saba", "Distributed Systems");
@@ -95,27 +106,29 @@ public class Ex71 extends ConsoleProgram {
 		school.addPupil("Mariami", "Information Theory");
 	}
 
+	private void addMoreTeachersAndSubjects(School school) {
+		school.addTeacher("Irakli");
+		school.addSubject("Irakli", "Programming Methodology");
+		school.addSubject("Irakli", "Discrete Math");
+	}
+
 	private void testGetPupils(School school) {
 		println("1. Shota's Pupils:");
 		Iterator<String> it1 = school.getPupils("Shota");
-		while (it1.hasNext()) {
-			print(it1.next() + ", ");
-		}
-		println();
+		printIterator(it1);
 
 		println("\n2. Nika's Pupils:");
 		Iterator<String> it2 = school.getPupils("Nika");
-		while (it2.hasNext()) {
-			print(it2.next() + ", ");
-		}
-		println();
+		printIterator(it2);
 
 		println("\n3. Giorgi's Pupils:");
 		Iterator<String> it3 = school.getPupils("Giorgi");
-		while (it3.hasNext()) {
-			print(it3.next() + ", ");
-		}
-		println();
+		printIterator(it3);
+
+		println("\n4. Irakli's Pupils:");
+		Iterator<String> it4 = school.getPupils("Irakli");
+		printIterator(it4);
+
 		println();
 	}
 
@@ -123,42 +136,28 @@ public class Ex71 extends ConsoleProgram {
 		// 1. Saba
 		println("1. Saba's Teachers:");
 		Iterator<String> it1 = school.getTeachers("Saba");
-		while (it1.hasNext()) {
-			print(it1.next() + ", ");
-		}
-		println();
+		printIterator(it1);
 
 		// 2. Ketevani
 		println("\n2. Ketevani's Teachers:");
 		Iterator<String> it2 = school.getTeachers("Ketevani");
-		while (it2.hasNext()) {
-			print(it2.next() + ", ");
-		}
-		println();
+		printIterator(it2);
 
 		// 3. Luka
 		println("\n3. Luka's Teachers:");
 		Iterator<String> it3 = school.getTeachers("Luka");
-		while (it3.hasNext()) {
-			print(it3.next() + ", ");
-		}
-		println();
+		printIterator(it3);
 
 		// 4. Eka
-		println("\n4. Luka's Teachers:");
+		println("\n4. Eka's Teachers:");
 		Iterator<String> it4 = school.getTeachers("Eka");
-		while (it4.hasNext()) {
-			print(it4.next() + ", ");
-		}
-		println();
+		printIterator(it4);
 
 		// 5. Eka
-		println("\n5. Luka's Teachers:");
+		println("\n5. Mariami's Teachers:");
 		Iterator<String> it5 = school.getTeachers("Mariami");
-		while (it5.hasNext()) {
-			print(it5.next() + ", ");
-		}
-		println();
+		printIterator(it5);
+
 		println();
 	}
 
@@ -167,4 +166,11 @@ public class Ex71 extends ConsoleProgram {
 		testGetTeachers(school);
 	}
 
+	private void printIterator(Iterator<String> it) {
+		List<String> list = new ArrayList<String>();
+		while (it.hasNext()) {
+			list.add(it.next());
+		}
+		println(list);
+	}
 }

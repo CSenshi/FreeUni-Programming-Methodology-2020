@@ -2,30 +2,13 @@ package s28;
 
 import java.util.Iterator;
 
-/*
- * School კლასი(2018 წლის გამოცდის ამოცანა).
- * 
- * თქვენი მიზანია დაწეროთ School კლასი, რომლის საშუალებითაც შევძლებთ უნივერსიტეტის მართვას. 
- * კლასს უნდა ჰქონდეს კონსტრუქტორი და 5 public მეთოდი.
- */
-public class School {
-
-	/*
-	 * კონსტრუქტორს არაფერი არ გადაეცემა. აქ შეგიძლიათ ინიციალიზაცია გაუკეთოთ
-	 * თქვენთვის საჭირო ცვლადებს.
-	 */
-	public School() {
-		// ToDo: Implement
-	}
-
+public interface School {
 	/*
 	 * addTeacher მეთოდის საშუალებით შეგიძლიათ სკოლას დაამატოთ ახალი მასწავლებელი.
 	 * მეთოდს გადაეცემა მასწავლებლის სახელი. შეგიძლიათ ჩათვალოთ, რომ მასწავლებლის
 	 * სახელი უნიკალურია.
 	 */
-	public void addTeacher(String teacher) {
-		// ToDo: Implement
-	}
+	public void addTeacher(String teacher);
 
 	/*
 	 * addSubject მეთოდის საშუალებით შეგიძლიათ მასწავლებელს დაუმატოთ საგანი. მეთოდს
@@ -35,17 +18,13 @@ public class School {
 	 * ერთდროულად. თუკი teacher სახელის მქონე მასწავლებელი არ არის აქამდე
 	 * დამატებული, მაშინ მეთოდმა არაფერი არ უნდა გააკეთოს.
 	 */
-	public void addSubject(String teacher, String subject) {
-		// ToDo: Implement
-	}
+	public void addSubject(String teacher, String subject);
 
 	/*
 	 * addPupil მეთოდის საშუალებით შეგიძლიათ საგანზე დაამატოთ მოსწავლე. ერთი და
 	 * იგივე მოსწავლე შეიძლება ერთ ან რამდენიმე საგანს სწავლობდეს.
 	 */
-	public void addPupil(String pupil, String subject) {
-		// ToDo: Implement
-	}
+	public void addPupil(String pupil, String subject);
 
 	/*
 	 * getTeachers მეთოდს გადაეცემა მოსწავლის სახელი და მან უნდა დააბრუნოს ამ
@@ -54,10 +33,7 @@ public class School {
 	 * დამატებული(სწავლობს). თუკი pupil სახელის მოსწავლე არ გვყავს მაშინ მეთოდმა
 	 * უნდა დააბრუნოს null.
 	 */
-	public Iterator<String> getTeachers(String pupil) {
-		// ToDo: Implement
-		return null;
-	}
+	public Iterator<String> getTeachers(String pupil);
 
 	/*
 	 * getPupils მეთოდს გადაეცემა მასწავლებლის სახელი და მან უნდა დააბრუნოს ამ
@@ -65,17 +41,12 @@ public class School {
 	 * რომლებიც მის რომელიმე საგანს სწავლობენ. თუკი teacher სახელის მქონე ლექტორი არ
 	 * გვყავს მაშინ მეთოდმა უნდა დააბრუნოს null.
 	 */
-	public Iterator<String> getPupils(String teacher) {
-		// ToDo: Implement
-		return null;
-	}
+	public Iterator<String> getPupils(String teacher);
 
 	/*
 	 * მეთოდმა უნდა წაშალოს მასწავლებლის შესახებ ყველა ინფორმაცია. ამ მეთოდის
 	 * გამოძახების, შემდეგ getTeachers მეთოდმა არ უნდა დააბრუნოს teacher სახელი არც
 	 * ერთი სტუდენტისთვის.
 	 */
-	public void removeTeacher(String teacher) {
-		// ToDo: Implement
-	}
+	public void removeTeacher(String teacher);
 }
