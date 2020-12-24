@@ -22,11 +22,11 @@ public class Ex71 extends ConsoleProgram {
 	 *			"Information Theory" - ["Mariami"]
 	 *		
 	 * -	Giorgi: 
-	 *		 	"OOP" - ["Saba", "Ketevani"],
+	 *		 	"OOP" - ["Saba", "Ketevani"]
 	 *			"Programming Paradigms" - ["Saba", "Ketevani"]
 	 *			"Distributed Systems" - ["Saba", "Ketevani"]
 	 *
-	 *-		Irakli:
+	 * -	Irakli:
 	 *			"Programming Methodology" - ["Luka", "Eka"]
 	 *			"Discrete Math" - ["Mariami"]
 	 */
