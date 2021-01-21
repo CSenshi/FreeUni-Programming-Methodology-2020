@@ -1,19 +1,19 @@
 package exams.f2019;
 
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import acm.program.ConsoleProgram;
 
 public class F2019Ex04 extends ConsoleProgram {
-
 	/*-
 	 * friends - {
-	 * 		"Ana" - ["Giorgi", "Nino", "Mariami", "Luka"]
-	 * 		"Giorgi" - ["Ana", "Nino"]
-	 * 		"Nino" - ["Ana", "Giorgi", "Mariami"]
-	 * 		"Mariami" - ["Ana", "Nino"]
-	 * 		"Luka" - ["Ana"]
+	 * 		"Ana" - [("Giorgi", 25), ("Nino", 23), ("Mariami", 18), ("Luka", 22)]
+	 * 		"Giorgi" - [("Ana", 18), ("Nino", 23)]
+	 * 		"Nino" - [("Ana", 18), ("Giorgi", 25), ("Mariami", 18)]
+	 * 		"Mariami" - [("Ana", 18), ("Nino", 23)]
+	 * 		"Luka" - [("Ana", 18)]
 	 * 	}
 	 */
 	public void run() {
@@ -21,11 +21,11 @@ public class F2019Ex04 extends ConsoleProgram {
 		HashMap<String, ArrayList<Person>> friends = new HashMap<>();
 
 		// 2. Initialize persons
-		Person ana = new Person("Ana", 20);
-		Person giorgi = new Person("Giorgi", 20);
-		Person nino = new Person("Nino", 20);
-		Person mariami = new Person("Mariami", 20);
-		Person luka = new Person("Luka", 20);
+		Person ana = new Person("Ana", 18);
+		Person giorgi = new Person("Giorgi", 25);
+		Person nino = new Person("Nino", 23);
+		Person mariami = new Person("Mariami", 18);
+		Person luka = new Person("Luka", 22);
 
 		// 3. Create empty friends list for each person
 		friends.put(ana.getName(), new ArrayList<>());
@@ -56,10 +56,52 @@ public class F2019Ex04 extends ConsoleProgram {
 		friends.get(nino.getName()).add(mariami);
 		friends.get(mariami.getName()).add(nino);
 
-		println(friends);
+		println(getPersons(friends));
 	}
 
 	private ArrayList<Person> getPersons(HashMap<String, ArrayList<Person>> friends) {
+		ArrayList<Person> result = new ArrayList<>();
+
+		// 1. Count total average
+		double totalAverage = 0;
+		for (String name : friends.keySet()) {
+			ArrayList<Person> friendsList = friends.get(name);
+
+			// find person object
+			Person currPerson = findPerson(friendsList, name, friends);
+
+			totalAverage += currPerson.getAge();
+		}
+		totalAverage /= friends.size();
+
+		// 2. count friends average
+		for (String name : friends.keySet()) {
+			ArrayList<Person> friendsList = friends.get(name);
+			double average = 0;
+			// find person object
+			Person currPerson = findPerson(friendsList, name, friends);
+
+			for (Person p : friendsList) {
+				average += p.getAge();
+			}
+			average /= friendsList.size();
+			if (average < totalAverage) {
+				result.add(currPerson);
+			}
+		}
+
+		return result;
+	}
+
+	private Person findPerson(ArrayList<Person> friendsList, String name, HashMap<String, ArrayList<Person>> friends) {
+		for (Person p : friendsList) {
+			ArrayList<Person> persons = friends.get(p.getName());
+			for (Person p2 : persons) {
+				if (p2.getName().equals(name)) {
+					return p2;
+				}
+			}
+		}
 		return null;
 	}
 }
@@ -87,5 +129,10 @@ class Person {
 
 	public void setAge(int newAge) {
 		age = newAge;
+	}
+
+	@Override
+	public String toString() {
+		return "(" + name + ", " + age + ")";
 	}
 }
