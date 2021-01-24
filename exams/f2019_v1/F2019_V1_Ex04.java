@@ -1,12 +1,11 @@
-package exams.f2019;
+package exams.f2019_v1;
 
-import java.awt.Font;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import acm.program.ConsoleProgram;
 
-public class F2019Ex04 extends ConsoleProgram {
+public class F2019_V1_Ex04 extends ConsoleProgram {
 	/*-
 	 * friends - {
 	 * 		"Ana" - [("Giorgi", 25), ("Nino", 23), ("Mariami", 18), ("Luka", 22)]

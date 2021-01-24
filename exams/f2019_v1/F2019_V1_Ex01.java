@@ -1,4 +1,4 @@
-package exams.f2019;
+package exams.f2019_v1;
 
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import acm.graphics.GLine;
 import acm.graphics.GPoint;
 import acm.program.GraphicsProgram;
 
-public class F2019Ex01 extends GraphicsProgram {
+public class F2019_V1_Ex01 extends GraphicsProgram {
 
 	private JTextField xField;
 	private JTextField yField;

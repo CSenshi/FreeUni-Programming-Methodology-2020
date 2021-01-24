@@ -1,10 +1,8 @@
-package exams.f2019;
-
-import java.awt.Font;
+package exams.f2019_v1;
 
 import acm.program.ConsoleProgram;
 
-public class F2019Ex02 extends ConsoleProgram {
+public class F2019_V1_Ex02 extends ConsoleProgram {
 
 	@Override
 	public void run() {
