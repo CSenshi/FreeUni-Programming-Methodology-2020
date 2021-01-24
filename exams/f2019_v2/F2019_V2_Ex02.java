@@ -2,7 +2,7 @@ package exams.f2019_v2;
 
 import acm.program.ConsoleProgram;
 
-public class F2019v2Ex02 extends ConsoleProgram {
+public class F2019_V2_Ex02 extends ConsoleProgram {
 
 	@Override
 	public void run() {

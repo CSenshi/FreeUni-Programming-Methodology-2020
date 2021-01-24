@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import acm.program.ConsoleProgram;
 
-public class F2019v2Ex04 extends ConsoleProgram {
+public class F2019_V2_Ex04 extends ConsoleProgram {
 
 	@Override
 	public void run() {
